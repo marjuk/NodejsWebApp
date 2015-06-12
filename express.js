@@ -1,27 +1,13 @@
 var express = require('express'); 
 var app = express(); 
+var routes = require('./routes')
 
 app.set('view engine', 'ejs'); 
 
-app.get('/', function(req,res){
-    
-  res.render('default', { 
-      title: 'Tuor', 
-      classname: 'Tuor',
-      users: [ "Marjuk"]
-  }) ; 
-    
-    }); 
+app.locals.pagetitle = "Marjuk"; 
 
-app.get('/profile', function(req,res){
-    
-res.render('default', { 
-      title: 'Profile', 
-      classname: 'profile'
-      
-                    }) ; 
-                                    }); 
-    
+app.get('/', routes.index);     
+app.get('/profile', routes.profile);     
 
 
 app.get('*', function(req,res){
