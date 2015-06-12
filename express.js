@@ -1,59 +1,37 @@
 var express = require('express'); 
-
 var app = express(); 
 
 app.set('view engine', 'ejs'); 
 
-//app.set('views', __dirname + '/nameofyour choosing directory'); if I want to change the name of the directory to keep the ejs files. Say I don't want them to stay in the /views folder. 
-
-
-app.get('/', function(req, res){
+app.get('/', function(req,res){
     
-res.render('default', { 
-    title: 'Home',
-    className: 'home',
-
-    users: ["Marjuk", "Reza", "Marzuq", "Fahim", "Sauro"]
-    
-                      }); 
-                            }); 
-
-app.get('/profile', function(req, res){
-    
-res.render('default', { 
-    title: 'Your Profile',
-    className: 'profile',
-    
-                    });     
-                                     }); 
-
-app.get('/users/:name?', function(req, res){
-    
-    var name = req.params.name; 
-    
-   res.send(name + "was here"); 
+  res.render('default', { 
+      title: 'Tuor', 
+      classname: 'Tuor',
+      users: [ "Marjuk"]
+  }) ; 
     
     }); 
 
-app.get('/users/:name?/:title', function(req, res){
+app.get('/profile', function(req,res){
     
-   var name = req.params.name; 
-   var title = req.params.title; 
+res.render('default', { 
+      title: 'Profile', 
+      classname: 'profile'
+      
+                    }) ; 
+                                    }); 
     
-    res.send("<p> Name" + name + "<br /> title:" + title + "was here"); //
+
+
+app.get('*', function(req,res){
+    
+
+  res.send( " Bad Route ") ; 
     
     }); 
-
-app.get('*', function(req, res){
-    
-
-    res.send(" Bad Route " ); 
+var server = app.listen(8080, function(){
     
     
-}); 
-
-
-var server = app.listen(8080, function() {
-    
-    console.log("listening on port 8080"); 
+    console.log("listening on port: 8080"); 
 }); 

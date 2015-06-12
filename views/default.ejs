@@ -1,42 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head> <% include partials/pages/head.ejs %> </head>
-  <body class= "<%=title %>" >
-         <% include partials/pages/header.ejs %> 
-
+  <head> <% include partials/pages/head.ejs %>  </head>
+  <body class=" <%= classname %> ">
+      <% include partials/pages/header.ejs %> 
       <div class="container"> 
       
-      <h1> <%= title %> </h1> <!-- without the equal (=) sign, I can add to simple javascript --> 
-    <p> One Ring to rule them all, One Ring to find them,
-One Ring to bring them all and in the darkness bind them
-In the Land of Mordor where the Shadows lie." </p>
+       <h1>  <%= title %> </h1> 
+            <p> One Ring to bring them all and in the darkness bind them
+                In the Land of Mordor where the Shadows lie." </p>
 
-        <ul> 
-             <% for (var i = 0; i < users.length; i++) { %> 
-                            
-                            <li> <%= users[i] %> </li>   
-    
-                                                    <% } %> 
-
-        </ul>
-
-
-      
       
       </div>
       
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                 <% include partials/pages/footer.ejs %> 
-                 <% include partials/pages/jsdefaults.ejs %> 
-
-
-   
+      <% include partials/pages/footer.ejs %> 
+      <% include partials/pages/jsdefaults.ejs %> 
   </body>
 </html>
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
